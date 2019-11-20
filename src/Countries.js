@@ -8,10 +8,12 @@ class Countries extends React.Component {
   }
 
   filter = () => {
-    if (this.props.data && !this.props.query) {
+    if (this.props.data && !this.props.query && !this.props.language) {
       return this.props.data.map(country => <CountryCard country={country}/>)
-    } else if (this.props.data && this.props.query) {
+    } else if (this.props.data && this.props.query && !this.props.language) {
       return this.props.data.filter(country => country.name.toLowerCase().includes(this.props.query.toLowerCase())).map(country => <CountryCard country={country}/>)
+    } else if (this.props.data && !this.props.query && this.props.language) {
+      //to do later
     }
   }
 

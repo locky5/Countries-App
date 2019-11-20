@@ -17,7 +17,8 @@ class App extends React.Component {
   }
 
   state = {
-    query: null
+    query: null,
+    language: null
   }
 
   startQuery = (event) => {
@@ -26,11 +27,17 @@ class App extends React.Component {
     })
   }
 
+  languageQuery = (event) => {
+    this.setState({
+      language: event.target.value
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <SearchBar startQuery={this.startQuery}/>
-        <Countries query={this.state.query} data={this.state.data}/>
+        <SearchBar startQuery={this.startQuery} languageQuery={this.languageQuery}/>
+        <Countries query={this.state.query} language={this.state.language} data={this.state.data}/>
       </div>
     )
   }
