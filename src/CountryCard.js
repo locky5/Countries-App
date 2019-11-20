@@ -1,12 +1,32 @@
 import React from 'react'
 
 class CountryCard extends React.Component {
+
+  state = {
+    more: false
+  }
+
+  moreInfo = (event) => {
+    this.setState({
+      more: !this.state.more
+    })
+  }
+
+  releaseInfo = () => {
+    return <div>
+      Capital: {this.props.country.capital}
+      <br/>
+      Languages: {this.props.country.languages.map(language => <div>{language.name}</div>)}
+    </div>
+  }
+
   render() {
     return (
       <div>
         {this.props.country.name}
         <br/>
-        <img src={this.props.country.flag} style={{width: '200px'}}/>
+        <img src={this.props.country.flag} style={{width: '200px'}} onClick={event => this.moreInfo(event)}/>
+        {this.state.more ? this.releaseInfo() : null}
       </div>
     )
   }
