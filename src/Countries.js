@@ -7,20 +7,18 @@ class Countries extends React.Component {
 
   }
 
-  componentDidMount() {
-    fetch('https://restcountries.eu/rest/v2/all')
-      .then(res => res.json())
-      .then(countries => {
-        this.setState({
-          data: countries
-        })
-      })
+  filter = () => {
+    if (this.props.data && !this.props.query) {
+      return this.props.data.map(country => <CountryCard country={country}/>)
+    } else if (this.props.data && this.props.query) {
+      return this.props.data.filter(country => country.name.toLowerCase().includes(this.props.query.toLowerCase())).map(country => <CountryCard country={country}/>)
+    }
   }
 
   render() {
     return (
       <div>
-        {this.state.data ? this.state.data.map(country => <CountryCard country={country}/>) : null}
+        {this.props.data ? this.filter() : null}
       </div>
     )
   }

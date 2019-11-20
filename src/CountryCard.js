@@ -27,6 +27,7 @@ class CountryCard extends React.Component {
         <br/>
         <img src={this.props.country.flag} style={{width: '200px'}} onClick={event => this.moreInfo(event)}/>
         {this.state.more ? this.releaseInfo() : null}
+        {console.log(this.props.country)}
       </div>
     )
   }
