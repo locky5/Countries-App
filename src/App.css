@@ -20,3 +20,14 @@
 .App-link {
   color: #09d3ac;
 }
+
+.row
+{
+    display: table;
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.column
+{
+    display: table-cell;
+}

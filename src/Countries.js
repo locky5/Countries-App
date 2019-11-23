@@ -30,7 +30,7 @@ class Countries extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         {this.props.data ? this.filter() : null}
       </div>
     )

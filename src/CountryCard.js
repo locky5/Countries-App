@@ -22,7 +22,7 @@ class CountryCard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="column">
         {this.props.country.name}
         <br/>
         <img src={this.props.country.flag} style={{width: '200px'}} onClick={event => this.moreInfo(event)}/>
