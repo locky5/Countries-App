@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app that showcases countries, their flags, and their capitals.
 
 ## Available Scripts
 
