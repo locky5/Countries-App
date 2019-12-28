@@ -1,8 +1,4 @@
-An app that showcases countries, their flags, and their capitals.
-
-## Available Scripts
-
-In the project directory, you can run:
+An app that showcases countries, their flags, and their capitals. Seeds data from https://restcountries.eu/.
 
 ### `npm start`
 
